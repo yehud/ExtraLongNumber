@@ -1,21 +1,25 @@
 ﻿Public Class ExtraLongNumber
     Private byteValue() As Byte
 
+    Public Sub New(ByVal value As String)
+        byteValue = New Byte(1) {}
+    End Sub
+
     Overloads Property ValueString() As String
         Get
             Return byteValue.ToString()
         End Get
         Set(value As String)
-            byteValue = Integer.Parse(value)
+            byteValue(1) = Integer.Parse(value)
         End Set
     End Property
 
     Overloads Property Value() As Byte
         Get
-            Return byteValue
+            Return byteValue(1)
         End Get
         Set(value As Byte)
-            byteValue = value
+            byteValue(1) = value
         End Set
     End Property
 
